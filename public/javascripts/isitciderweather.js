@@ -19,7 +19,7 @@ function success(position) {
 }
 
 function error(message) {
-  msg = typeof msg == 'string' ? msg : "failed";
+  msg = typeof message == 'string' ? message : "failed";
   $('#status').html(msg);
   $('body').addClass('error');
 } 
