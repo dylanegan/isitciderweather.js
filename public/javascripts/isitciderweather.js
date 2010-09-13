@@ -1,8 +1,9 @@
 function success(position) {
   var today = new Date();
   var hour = today.getHours();
+  var geonames = new GeoNames();
 
-  GeoNames.findNearByWeather(position.coords.latitude, position.coords.longitude, function(data) {
+  geonames.findNearByWeather(position.coords.latitude, position.coords.longitude, function(data) {
     if (data) {
       if (hour < 9) {
         $('#outcome').html("it's before 9, ciroc?");
