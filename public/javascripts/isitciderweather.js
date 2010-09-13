@@ -24,7 +24,7 @@ function error(message) {
   $('body').addClass('error');
 } 
 
-var today = new Date(2010, 09, 14, 08, 10);
+var today = new Date();
 var hour = today.getHours();
 
 if (hour < 9) {
