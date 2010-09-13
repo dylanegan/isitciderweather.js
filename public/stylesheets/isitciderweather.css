@@ -1,6 +1,6 @@
-body {color: #FFFFFF;}
+body {color: #FFFFFF; background-color: #000000;}
 body.cider {background-color: #7BAD2E;}
-body.ciroc {background-color: #F5EA87;}
+body.ciroc {background-color: #DFA43E;}
 body.error {background-color: #DA2B31;}
 body.liver {background-color: #395499;}
 body.wine {background-color: #993F4D;}
