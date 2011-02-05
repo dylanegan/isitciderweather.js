@@ -3,7 +3,10 @@ function success(position) {
 
   geonames.findNearByWeather(position.coords.latitude, position.coords.longitude, function(data) {
     if (data) {
-      if (parseInt(data.temperature) >= 19) {
+      if (parseInt(data.temperature) >= 30) {
+        $('#outcome').html("fuck oath! you're an idiot otherwise");
+        $('body').addClass('cider');
+      } else if (parseInt(data.temperature) >= 19) {
         $('#outcome').html("sure, i've got mine in hand");
         $('body').addClass('cider');
       } else {
