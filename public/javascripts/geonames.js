@@ -8,7 +8,9 @@ GeoNames.prototype.findNearByWeather = function(latitude, longitude, callback) {
     try {
       details = response.weatherObservation;
       weather = {
-        "temperature": details.temperature
+        "temperature": details.temperature,
+        "lng": details.lng,
+        "lat": details.lat
       };
     } catch (error) {
       console ? console.log(error) : null;
