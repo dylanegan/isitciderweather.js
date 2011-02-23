@@ -10,7 +10,7 @@ function getParameterByName(name) {
 }
 
 function success(position) {
-  calculateCider(positions.coords.latitude, positions.coords.longitude);
+  calculateCider(position.coords.latitude, position.coords.longitude);
 }
 
 function calculateCider(lat, lng) {
