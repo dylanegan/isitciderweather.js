@@ -24,9 +24,12 @@ function calculateCider(lat, lng) {
       } else if (parseInt(data.temperature) >= 19) {
         $('#outcome').html("sure, i've got mine in hand");
         $('body').addClass('cider');
-      } else {
+      } else if (parseInt(data.temperature) >= 10) {
         $('#outcome').html("maybe go a glass of red");
         $('body').addClass('wine');
+      } else {
+        $('#outcome').html("grab some scotch, something peaty");
+        $('body').addClass('scotch');
       }
       $('#status').html('currently <a href="/?lat=' + data.lat + '&lng=' + data.lng + '">' + data.temperature + '&deg;</a>');
     } else {
