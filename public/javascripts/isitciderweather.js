@@ -49,9 +49,14 @@ var today = new Date();
 var hour = today.getHours();
 var lat = getParameterByName('lat');
 var lng = getParameterByName('lng');
+var free = getParameterByName('isitfreecider');
 
-if ((typeof lat != "undefined" && lat !== null) && (typeof lng != "undefined" && lng !== null)) {
-  $('#status').html("calculating based on lat and lng ...")
+if (typeof free != "undefined" && free !== null && free === "yes") {
+  $('#outcome').html("JACKPOT! DRINK ALL OF THE CIDER!");
+  $('#status').html("don't forget to high five");
+  $('body').addClass('cider');
+} else if ((typeof lat != "undefined" && lat !== null) && (typeof lng != "undefined" && lng !== null)) {
+  $('#status').html("calculating based on lat and lng ...");
   calculateCider(lat, lng);
 } else if (hour < 9) {
   $('#outcome').html("it's before 9, ciroc?");
