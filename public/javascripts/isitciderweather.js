@@ -85,14 +85,10 @@ if (typeof free != "undefined" && free !== null && free === "yes") {
                 if (typeof data == 'string') data = $.parseJSON(data);
                 if (data.latitude && data.longitude) {
                     success({'coords': data});
-                }
-                else {
-                    jsonperr();
+                    return;
                 }
             }
-            else {
-                jsonperr();
-            }
+            jsonperr();
         },
         error: jsonperr
     });
