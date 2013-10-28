@@ -43,7 +43,16 @@ function error(message) {
   msg = typeof message == 'string' ? message : "failed";
   $('#status').html(msg);
   $('body').addClass('error');
-} 
+}
+
+function jsonperr() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(success, error);
+    }
+    else {
+        error('not supported');
+    }
+}
 
 var today = new Date();
 var hour = today.getHours();
@@ -66,8 +75,25 @@ if (typeof free != "undefined" && free !== null && free === "yes") {
   $('#outcome').html("check in at 11, liver break!");
   $('#status').html("drink responsibly&#8482;");
   $('body').addClass('liver');
-} else if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(success, error);
 } else {
-  error('not supported');
+    $.ajax({
+        url: 'http://freegeoip.net/json/',
+        dataType: 'JSONP',
+        data: {},
+        success: function(data, textS, xhr) {
+            if (xhr.status) {
+                if (typeof data == 'string') data = $.parseJSON(data);
+                if (data.latitude && data.longitude) {
+                    success({'coords': data});
+                }
+                else {
+                    jsonperr();
+                }
+            }
+            else {
+                jsonperr();
+            }
+        },
+        error: jsonperr
+    });
 }
