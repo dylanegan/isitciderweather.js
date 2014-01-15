@@ -3,7 +3,7 @@ GeoNames = function() {
   return this;
 };
 GeoNames.prototype.findNearByWeather = function(latitude, longitude, callback) {
-  return $.getJSON("http://api.geonames.org/findNearByWeatherJSON?lat=" + escape(latitude) + "&lng=" + escape(longitude) + "&callback=?", function(response) {
+  return $.getJSON("http://api.geonames.org/findNearByWeatherJSON?lat=" + escape(latitude) + "&lng=" + escape(longitude) + "&username=isitciderweather&style=full&callback=?", function(response) {
     var details, weather;
     try {
       details = response.weatherObservation;
