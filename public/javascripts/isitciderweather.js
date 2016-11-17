@@ -14,9 +14,9 @@ function success(position) {
 }
 
 function calculateCider(lat, lng) {
-  var geonames = new GeoNames();
+  var darksky = new DarkSky();
 
-  geonames.findNearByWeather(lat, lng, function(data) {
+  darksky.forecast(lat, lng, function(data) {
     if (data) {
       if (parseInt(data.temperature) >= 30) {
         $('#outcome').html("fucking oath! you're an idiot otherwise");
@@ -43,7 +43,7 @@ function error(message) {
   msg = typeof message == 'string' ? message : "failed";
   $('#status').html(msg);
   $('body').addClass('error');
-} 
+}
 
 var today = new Date();
 var hour = today.getHours();

@@ -2,9 +2,17 @@ GEM
   remote: https://rubygems.org/
   specs:
     rack (1.6.0)
+    rack-ssl-enforcer (0.2.9)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   rack
+  rack-ssl-enforcer
+
+RUBY VERSION
+   ruby 2.2.5p319
+
+BUNDLED WITH
+   1.12.5
