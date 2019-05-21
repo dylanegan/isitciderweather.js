@@ -25,7 +25,7 @@ function calculateCider(lat, lng) {
         $('#outcome').html("sure, i've got mine in hand");
         $('body').addClass('cider');
       } else if (parseInt(data.temperature) >= 10) {
-        $('#outcome').html("maybe go a glass of red");
+        $('#outcome').html("maybe get a glass of red");
         $('body').addClass('wine');
       } else {
         $('#outcome').html("grab some scotch, something peaty");
